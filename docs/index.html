@@ -1,6 +1,6 @@
 <link rel="shortcut icon" href="https://www.runoob.com/images/pic_bulbon.gif">
 <title>xu信,我创造的模拟微信</title>
-<h1>xushi通讯系统</h1><button onclick="y()">显示软键盘</button><button onclick="a()">收起软键盘</button><br>
+<h1>xushi通讯系统</h1><button onclick="y()">显示软键盘</button><button onclick="b()">收起软键盘</button><br>
 <form action="https://xushichatsend.xushi-1009.cc/xu" method="POST">
         给谁:<input name="to"><br>
         信息:<input name="xo" id="x"><br>
@@ -17,3 +17,25 @@
 	<button onclick="a('y')">y</button><button onclick="a('z')">z</button>
 </div>
 <script>
+function x() {
+  let x = new webkitSpeechRecognition();
+  x.lang = 'zh-CN'; 
+  x.interimResult = false; 
+
+  x.start();
+
+  x.onresult = function(ccy) {
+    let xu= ccy.results[0][0].transcript; 
+    document.getElementById("x").value = xu;
+  };
+}
+function y(){
+	document.getElementById("y").style.display="block";
+}
+function b(){
+	document.getElementById("y").style.display="none";
+}
+function a(xu) {
+  document.getElementById("x").value+=xu;
+}
+</script>
